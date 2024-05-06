@@ -1,0 +1,13 @@
+<header>
+    <h1>Les Avis De Notre Clients</h1>
+  </header>
+  <main>
+    <section class="review" *ngFor="let review of reviews">
+      <div class="reviewer">
+        <img [src]="review.imageUrl" [alt]="review.name">
+        <h2>{{ review.name }}</h2>
+      </div>
+      <p class="review-text">{{ review.comment }}</p>
+    </section>
+  </main>
+  
