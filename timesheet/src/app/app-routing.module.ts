@@ -54,6 +54,10 @@ const routes: Routes = [
 
   
   
+  { path: 'userdash', loadChildren: () => import('./userdash/userdash.module').then(m => m.UserdashModule) },
+
+  
+  
 ];
 
 @NgModule({
