@@ -1,9 +1,10 @@
 /* Add some basic styling to the form */
 body {
-  background-image: url('https://hotellerie.digital/wp-content/uploads/newsletter-efficace-lecture-abonnement-inbound-marketing-hotellerie-scaled-1.jpeg');
-  background-size: cover; /* Pour couvrir tout le fond */
-  background-position: center; /* Pour centrer l'image */
-  /* Autres styles pour le corps de la page */
+  background-image: url('https://geekflare.com/cdn-cgi/image/width=1200,height=630,fit=crop,quality=90,format=auto,onerror=redirect,metadata=none/wp-content/uploads/sites/26/2022/01/Timesheet-Templates-to-Track-Time-Spent-by-Employees.jpg');
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
 }
 h1 {
   font-size: 24px;
@@ -14,12 +15,16 @@ h1 {
 }
 
 form {
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 20px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 2550.5);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-self: center;
   }
   
   /* Style the form labels and inputs */

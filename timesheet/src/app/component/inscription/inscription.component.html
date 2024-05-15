@@ -1,19 +1,19 @@
-<header>
-    <h1>Inscription</h1>
-  </header>
+<body>
+  <br>
   <main>
     <form (ngSubmit)="register()">
+      <h1> Page Inscription</h1>
       <div>
         <label for="username">Nom d'utilisateur :</label>
-        <input type="text" id="nom" name="nom" [(ngModel)]="nom" required>
+        <input type="text" id="nom" name="nom" placeholder="Nom d'utilisateur"[(ngModel)]="nom" required>
       </div>
       <div>
         <label for="username">Prenom d'utilisateur :</label>
-        <input type="text" id="prenom" name="prenom" [(ngModel)]="prenom" required>
+        <input type="text" id="prenom" name="prenom" placeholder="Prenom d'utilisateur" [(ngModel)]="prenom" required>
       </div>
       <div>
         <label for="email">Email :</label>
-        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+        <input type="email" id="email" name="email" placeholder="email"[(ngModel)]="email" required>
       </div>
       <div>
         <label for="username">Date de Naissance :</label>
@@ -21,26 +21,27 @@
       </div>
       <div>
         <label for="username">Telephone :</label>
-        <input type="text" id="telephone" name="telephone" [(ngModel)]="telephone" required>
+        <input type="text" id="telephone" name="telephone" placeholder="Telephone" [(ngModel)]="telephone" required>
       </div>
       <div>
         <label for="username">Date d'emboche :</label>
-        <input type="date" id="datedemboche" name="datedemboche" [(ngModel)]="datedemboche" required>
+        <input type="date" id="dateemboche" name="dateemboche" [(ngModel)]="dateemboche" required>
       </div>
       <div>
         <label for="username">Role :</label>
-        <input type="text" id="username" name="username" [(ngModel)]="role" required>
+        <input type="text" id="role" name="role" placeholder="Role"[(ngModel)]="role" required>
       </div>
       <div>
         <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" [(ngModel)]="motdepasse" required>
+        <input type="password" id="password" name="password" placeholder="Mot de passe" [(ngModel)]="motdepasse" required>
       </div>
       <div>
-        <label for="username">Confirmer Mot de passe :</label>
-        <input type="password" id="password" name="password" [(ngModel)]="motdepasse" required>
+        <label for="password">Confirmer Mot de passe :</label>
+        <input type="password" id="password" name="password" placeholder="Confirmer mot de passe" [(ngModel)]="confirmMotdepasse" required>
       </div>
       <button type="submit">S'inscrire</button>
-      <div class="mt-2">Already a member? <a routerLink="/connexion">Connexion</a></div>
+      <div class="mt-2">Déjà membre? <a routerLink="/connexion">Connexion</a></div>
     </form>
   </main>
+</body>
   

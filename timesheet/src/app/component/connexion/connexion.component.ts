@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-connexion',
@@ -7,12 +9,25 @@ import { Component } from '@angular/core';
   
 })
 export class ConnexionComponent {
-  email: string | undefined;
-  motdepasse: string | undefined;
+  email = '';
+  motdepasse = '';
+
+  constructor(private authService: AuthService) {}
 
   login() {
-    // Vous pouvez implémenter ici la logique de connexion, par exemple, envoyer les données à un serveur
-    console.log("Email :", this.email);
-    console.log("Mot de passe :", this.motdepasse);
+    const credentials = {
+      email: this.email,
+      motdepasse: this.motdepasse
+    };
+
+    this.authService.login(credentials).subscribe(
+      response => {
+        console.log('Connexion réussie', response);
+        // Stocker le token et rediriger ou afficher un message de succès
+      },
+      error => {
+        console.error('Erreur lors de la connexion', error);
+      }
+    );
   }
 }
