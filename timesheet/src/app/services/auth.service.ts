@@ -6,20 +6,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:3000'; // Assurez-vous que l'URL correspond à celle de votre backend
- 
+  forgotPassword(email: string) {
+    throw new Error('Method not implemented.');
+  }
+  private baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
-  register(utilisateurs: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/inscription`, utilisateurs);
+  register(user: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/register`, user);
   }
 
   login(credentials: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/connexion`, credentials);
+    return this.http.post(`${this.baseUrl}/login`, credentials);
   }
-  forgotPassword(email : string) {
-    
-}
   
 }

@@ -44,6 +44,13 @@ form {
     border-radius: 3px;
     box-sizing: border-box;
   }
+
+ select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
   
   /* Style du bouton */
   button {

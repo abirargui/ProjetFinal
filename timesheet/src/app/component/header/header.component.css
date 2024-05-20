@@ -1,9 +1,6 @@
-.sapcer{
-    flex: 1 1 auto;
+.spacer {
+  flex: 1 1 auto;
 }
-/* styles.css (ou styles.scss) */
-
-/* Style du mat-toolbar */
 .mat-toolbar {
     background-color: #1976d2; /* Couleur de fond */
     color: white; /* Couleur du texte */

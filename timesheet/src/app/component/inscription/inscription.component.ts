@@ -1,49 +1,53 @@
+
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+
+interface utilisateurs {
+  nom: string;
+  prenom: string;
+  email: string;
+  datenais: string;
+  telephone: string;
+  dateemboche: string;
+  role: string;
+  motdepasse: string;
+  confirmMotdepasse: string;
+}
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
   styleUrls: ['./inscription.component.css']
 })
-export class InscriptionComponent {
-  nom = '';
-  prenom = '';
-  email = '';
-  datenais = '';
-  telephone = '';
-  dateemboche = '';
-  role = '';
-  motdepasse = '';
-  confirmMotdepasse = '';
+export class InscriptionComponent{
+  utilisateur: utilisateurs = {
+    nom: '',
+    prenom: '',
+    email: '',
+    datenais: '',
+    telephone: '',
+    dateemboche: '',
+    role: '',
+    motdepasse: '',
+    confirmMotdepasse: ''
+  };
 
-  constructor(private authService: AuthService) {}
+  constructor(private userService: AuthService, private router: Router) {}
 
   register() {
-    if (this.motdepasse !== this.confirmMotdepasse) {
-      alert("Les mots de passe ne correspondent pas.");
+    if (this.utilisateur.motdepasse !== this.utilisateur.confirmMotdepasse) {
+      alert('Passwords do not match');
       return;
     }
 
-    const utilisateurs = {
-      nom: this.nom,
-      prenom: this.prenom,
-      email: this.email,
-      datenais: this.datenais,
-      telephone: this.telephone,
-      dateemboche: this.dateemboche,
-      role: this.role,
-      motdepasse: this.motdepasse
-    };
-
-    this.authService.register(utilisateurs).subscribe(
+    this.userService.register(this.utilisateur).subscribe(
       response => {
-        console.log('Inscription réussie', response);
-        // rediriger ou afficher un message de succès
+        console.log('User registered successfully', response);
+        this.router.navigate(['/connexion']);
       },
       error => {
-        console.error('Erreur lors de l\'inscription', error);
+        console.error('There was an error during the registration process', error);
       }
     );
   }
-
 }

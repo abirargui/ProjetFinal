@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 interface Contact {
-  name: string;
+  nom: string;
   email: string;
   sujet:string;
   message: string;
@@ -14,7 +14,7 @@ interface Contact {
 })
 export class ContactComponent {
   contact: Contact = {
-    name: '',
+    nom: '',
     email: '',
     sujet: '',
     message: ''
