@@ -1,15 +1,11 @@
-<div class="top-section">
+<div class="app-header" >
+    <app-header></app-header>
   </div>
-  <div class="middle-section">
-    <div class="widget left">
-      
-    </div>
-    <div class="widget right">
-    </div>
+  <div class="container">
+    <app-sidenav></app-sidenav>
   </div>
-  <div class="bottom-section">
-    <div class="widget left">
-    </div>
-    <div class="widget right">
-    </div>
+  
+   <div class="content" [ngClass]="isSidebarVisible ? 'with-sidebar' : 'without-sidebar'">
+    <!-- Your main content goes here -->
+    <router-outlet></router-outlet>
   </div>

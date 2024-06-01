@@ -28,6 +28,7 @@ import { EquipeComponent } from './component/equipe/equipe.component';
 import { AvisclientComponent } from './component/avisclient/avisclient.component';
 import { InscriptionComponent } from './component/inscription/inscription.component';
 import { ForgetpasswordComponent } from './component/forgetpassword/forgetpassword.component';
+import { ClientProfileComponent } from './component/client-profile/client-profile.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ForgetpasswordComponent } from './component/forgetpassword/forgetpasswo
     AvisclientComponent,
     InscriptionComponent,
     ForgetpasswordComponent,
+    ClientProfileComponent,
   
   ],
   imports: [

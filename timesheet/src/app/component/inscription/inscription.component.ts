@@ -39,14 +39,15 @@ export class InscriptionComponent{
       alert('Passwords do not match');
       return;
     }
+    console.log(this.utilisateur)
 
     this.userService.register(this.utilisateur).subscribe(
-      response => {
-        console.log('User registered successfully', response);
+      response => {         
+        alert(response.msg);
         this.router.navigate(['/connexion']);
       },
       error => {
-        console.error('There was an error during the registration process', error);
+          alert(error.error.err)
       }
     );
   }

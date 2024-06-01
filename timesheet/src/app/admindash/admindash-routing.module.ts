@@ -3,7 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdmindashComponent } from './admindash.component';
 
 
-const routes: Routes = [{ path: '', component: AdmindashComponent }];
+
+const routes: Routes = [{ path: 'admindash', component: AdmindashComponent }
+];
+
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

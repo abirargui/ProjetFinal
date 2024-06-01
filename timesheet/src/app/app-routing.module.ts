@@ -8,6 +8,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { InscriptionComponent } from './component/inscription/inscription.component';
 import { ForgetpasswordComponent } from './component/forgetpassword/forgetpassword.component';
+import { ClientProfileComponent } from './component/client-profile/client-profile.component';
 
 
 const routes: Routes = [
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: 'forgetpassword',
     component: ForgetpasswordComponent
+  },
+  {
+    path: 'client-profile',
+    component: ClientProfileComponent
   },
   { path: '', component: AccueilComponent },
 

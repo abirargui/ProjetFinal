@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  forgotPassword(email: string) {
+  forgotPassword(_email: string) {
     throw new Error('Method not implemented.');
   }
   private baseUrl = 'http://localhost:3000';

@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
-
-interface Contact {
-  nom: string;
-  email: string;
-  sujet:string;
-  message: string;
-}
+import { NgForm } from '@angular/forms';
+import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,16 +8,18 @@ interface Contact {
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-  contact: Contact = {
-    nom: '',
-    email: '',
-    sujet: '',
-    message: ''
-   
-  };
+contact: any;
+  constructor(private contactService: ContactService) { }
 
-  onSubmit(contact: Contact) {
-    // Handle form submission here
-    console.log(contact);
+  onSubmit(contactForm: NgForm) {
+    this.contactService.sendContactForm(contactForm.value).subscribe(
+      response => {
+        console.log('Message envoyé avec succès', response);
+        contactForm.reset();
+      },
+      error => {
+        console.error('Erreur lors de l\'envoi du message', error);
+      }
+    );
   }
 }

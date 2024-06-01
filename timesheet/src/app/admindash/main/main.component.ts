@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { SidebarService } from '../services/sidebar/sidebar.service';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
+  isSidebarVisible = true;
+  constructor(private sidebarService: SidebarService) {}
 
-  constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.sidebarService.sidebarVisibility$.subscribe((isVisible) => {
+      console.log(isVisible)
+      this.isSidebarVisible = isVisible;
+    });
   }
-
 }

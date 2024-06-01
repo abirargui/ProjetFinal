@@ -1,105 +1,66 @@
-@media only screen and (max-width: 1600px) {
-    .top-section {
-      width: 1280px;
-    }
-    .middle-section {
-      width: 1280px;
-    }
-    .middle-section .widget.left {
-      width: 790px;
-    }
-    .bottom-section .widget.right {
-      width: 570px;
-    }
-  }
-  
-  @media only screen and (max-width: 1500px) {
-    .top-section {
-      width: 1180px;
-    }
-    .middle-section {
-      width: 1180px;
-    }
-    .middle-section .widget.left {
-      width: 690px;
-    }
-    .bottom-section .widget.right {
-      width: 470px;
-    }
-  }
-  
-  @media only screen and (max-width: 1400px) {
-    .top-section {
-      width: 1080px;
-    }
-    .middle-section {
-      width: 1080px;
-    }
-    .middle-section .widget.left {
-      width: 590px;
-    }
-    .bottom-section .widget.right {
-      width: 370px;
-    }
-  }
-  
-  @media only screen and (max-width: 1200px) {
-    .top-section {
-      width: 980px;
-    }
-    .middle-section {
-      width: 980px;
-    }
-    .middle-section .widget.left {
-      width: 490px;
-    }
-    .bottom-section .widget.left {
-      width: 570px;
-    }
-    .bottom-section .widget.right {
-      width: 370px;
-    }
-  }
-  
-  .middle-section {
+/* Global styles or a component-specific CSS file */
+.container {
     display: flex;
-    justify-content: space-between;
+    height: 100vh;
   }
   
-  .middle-section .widget {
-    height: 350px;
-    background-color: #fff;
-    border-radius: 5px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #939393;
-  }
-  
-  .middle-section .widget.left {
-    width: 890px;
-  }
-  
-  .middle-section .widget.right {
-    width: 450px;
-  }
-  
-  .bottom-section {
+  .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Arrange children vertically */
+    height: 100vh;
   }
   
-  .bottom-section .widget {
-    height: 250px;
-    background-color: #fff;
-    border-radius: 5px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #939393;
+  .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure the header is above other content */
   }
   
-  .bottom-section .widget.left {
-    width: 670px;
+  .app-sidenav {
+    flex: 0 0 250px; /* Fixed width for the sidebar */
+    background-color: #333;
+    color: white;
+    padding: 20px;
   }
   
-  .bottom-section .widget.right {
-    width: 670px;
+  .content {
+    position: fixed;
+    top: 80px; /* Adjust this value to match the height of your header */
+    left: 250px; /* Adjust this value to match the width of your sidebar */
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 999; /* Ensure the content is above the sidebar */
   }
+  
+  .content {
+    flex: 1;
+    /* padding: 20px; */
+    /* overflow-y: auto; */
+    /* margin-left: 250px; */
+    /* transition: margin-left 0.3s ease; Add a transition for smooth animation */
+  }
+  
+  /* Style content differently when sidebar is hidden */
+  .content.content-with-sidebar {
+    margin-left: 0;
+  }
+  
+  .with-sidebar {
+    left: 250px;
+    padding: 3px;
+    transition: left 0.3s ease, padding-left 0.3s ease; /* Add transitions for left and padding changes */
+  }
+  
+  /* Remove padding when the sidebar is hidden */
+  .without-sidebar {
+    left: 25px;
+    padding: 3px;
+    transition: left 0.3s ease, padding-left 0.3s ease; /* Add transitions for left and padding changes */
+  }
+  
+  /* Additional styling to make it visually appealing */
+  /* Add your additional styles here */
   

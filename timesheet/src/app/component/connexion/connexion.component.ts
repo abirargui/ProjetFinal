@@ -25,12 +25,12 @@ export class ConnexionComponent {
 
   login() {
     this.userService.login(this.credentials).subscribe(
-      response => {
-        console.log('Login successful', response);
-        this.router.navigate(['/contact']);
+      response => {         
+        alert(response.msg);
+        this.router.navigate(['/userdash']);
       },
       error => {
-        console.error('There was an error during the login process', error);
+          alert(error.error.err)
       }
     );
   }

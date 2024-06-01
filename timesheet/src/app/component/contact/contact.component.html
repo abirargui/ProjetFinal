@@ -1,6 +1,10 @@
-<body>
-  <br>
-<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)">
+
+
+  <div class="container">
+    <div class="background-image"></div>
+    <div class="form-container">
+      <br>
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)" method="get">
   <h1>Contact Nous pour plus des informations</h1>
     <div>
       <label for="name">Nom:</label>
@@ -20,4 +24,5 @@
     </div>
     <button type="submit">Envoyer Message</button>
   </form>
-</body>
+</div>
+</div>
